@@ -38,11 +38,16 @@ shinyUI(fluidPage(
     
     # Show a plot of the generated distribution
     mainPanel(
-      h2("Plot of Cell Phones per 100 Population for", align="center"),
-      h3(textOutput("caption"), align="center"),
-      plotOutput("chart"),
-      textOutput(paste("Plot of Cell Phones per 100 Population for", "caption")),
-      h3(textOutput("errorText"), color="red")
+      tabsetPanel(
+        tabPanel("Plot", h2("Plot of Cell Phones per 100 Population for", align="center"),
+                 h3(textOutput("caption"), align="center"),
+                 plotOutput("chart"),
+                 textOutput(paste("Plot of Cell Phones per 100 Population for", "caption")),
+                 h3(textOutput("errorText"), color="red")
+        ),
+        tabPanel("Documentation",includeMarkdown("documentation.md"))
+        )
+      )
     )
   )
-))
+)

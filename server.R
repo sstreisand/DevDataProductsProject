@@ -32,6 +32,9 @@ shinyServer(function(input, output) {
   output$caption <- renderText( {
     formulaText()
   })
+  output$errorText <- renderText( {
+    errorText()
+  })
   
   #http://web.stanford.edu/~cengel/cgi-bin/anthrospace/building-my-first-shiny-application-with-ggplot help
   output$chart <-  renderPlot( {
